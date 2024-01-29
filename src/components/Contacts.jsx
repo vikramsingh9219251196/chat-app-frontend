@@ -31,11 +31,6 @@ export default function Contacts({ contacts, changeChat}) {
     changeChat(contact);
   };
 
-  const isUserOnline = () => {
-    const currentTime = new Date();
-    const threshold = 5 * 60 * 1000; // 5 minutes (adjust as needed)
-    return currentTime - lastActiveTime < threshold;
-  };
 
   return (
     <>
@@ -67,9 +62,6 @@ export default function Contacts({ contacts, changeChat}) {
                   </div>
                   <div className="username">
                     <h3>{contact.username}</h3>
-                    <span style={{ color: contact.isOnline ? "green" : "yellow" }}>
-                    {isContactOnline ? "Online" : "Offline"}
-                    </span>
                   </div>
                 </div>
               );
